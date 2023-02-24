@@ -9,14 +9,13 @@ function createList() {
   for (sect of sections) {
     let listSection = document.createElement("li");
     counter++;
-    const idCarrier = parseInt(sect.outerHTML.slice(20, 21));
     listSection.innerHTML = `<a class = 'menu__link' id = 'nav_but${counter}'>section ${counter}</a>`;
     listSection.addEventListener("click", () => {
       document.addEventListener("scroll", (event) => {
         event.preventDefault();
       });
       document
-        .getElementById(`section${idCarrier}`)
+        .getElementById(`section${counter}`)
         .scrollIntoView({ behavior: "smooth" });
     });
     navBar.appendChild(listSection);
